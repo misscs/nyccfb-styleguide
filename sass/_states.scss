@@ -1,0 +1,21 @@
+// States
+
+.is-hidden {
+  display: none;
+}
+
+.is-expanded {
+  display: block;
+}
+
+.is-active {
+  background: $tertiary;
+}
+
+.is-pressed {
+  background: $secondary;
+}
+
+.is-disabled {
+  background: $primary;
+}

@@ -1,0 +1,19 @@
+/////////////
+// Buttons //
+/////////////
+[class*="btn"] {
+  width: 44px;
+  height: 44px;
+  display: block;
+  @include border-radius(6px);
+}
+
+// .btn-menu
+.btn-menu {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  @include breakpoint($bp-m) {
+    display: none;
+  }
+}

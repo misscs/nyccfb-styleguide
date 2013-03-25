@@ -1,0 +1,34 @@
+////////////////
+// Extensions //
+////////////////
+
+@import "compass";
+@import "singularitygs";
+@import "modular-scale";
+
+///////////////////
+// Modular Scale //
+///////////////////
+
+$xxs: ms(-0.75);
+$xs: ms(-0.5);
+$s: ms(-0.25);
+$m: ms(0);
+$l: ms(0.25);
+$xl: ms(0.5);
+
+// Singularity
+
+$bp-s: 400px;
+$bp-m: 700px;
+$bp-l: 900px;
+
+$gs-first: 1 1 1; // Our mobile first grid set
+$gs-s: 6 2 3 $bp-s;
+$gs-m: 6 2 3 $bp-m;
+$gs-l: 6 2 3 $bp-l;
+
+$grids: $gs-first, $gs-s, $gs-m, $gs-l;
+$gutters: .25;
+$paddings: 0;
+$container: 960px

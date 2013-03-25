@@ -1,0 +1,62 @@
+///////////////////////////////////////////////////////////////////////////
+// Layout
+// Layout rules divide the page into sections. Layouts hold one or more module // together
+///////////////////////////////////////////////////////////////////////////
+
+// Layout Variables, Mixins, and Extends
+%center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin padding-sides($pl: 10px, $pr: 10px) {
+  padding-left: $pl;
+  padding-right: $pr;
+}
+
+.container {
+  margin: 0 auto;
+  @include container;
+  // @include grid-background;
+
+}
+
+// Holds the carousel
+[role="banner"] {
+  @include padding-leader;
+  @include padding-trailer;
+}
+
+// Main Content
+[role="main"] {
+  @include breakpoint($bp-m) {
+    width: 70%;
+    float: left;
+    height: 100vh;
+  }
+}
+
+// Sidebar
+[role="secondary"] {
+  @include breakpoint($bp-m) {
+    width: 30%;
+    float: right;
+    height: 100vh;
+  }
+}
+
+// Footer
+[role="contentinfo"] {
+  clear: both;
+}
+
+
+///////////////////
+// Local Imports //
+///////////////////
+@import "partials/layout-aside";
+@import "partials/layout-header";
+@import "partials/layout-main";
+
+

@@ -1,0 +1,40 @@
+// Base
+// Base rules are the defaults. They are almost exclusively single ele- ment selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.
+
+a {
+  // +link-colors()
+  text-decoration: none;
+}
+
+#{headings()} {
+  margin: 0;
+}
+
+h1 {
+  @include adjust-font-size-to($xl);
+  color: $secondary;
+}
+
+h2 {
+  @include adjust-font-size-to($l);
+  color: $primary;
+  @include font-weight(thin);
+}
+
+h3 {
+  @include adjust-font-size-to($m);
+  @include font-weight(bold);
+  color: $tertiary;
+}
+
+h4 {
+  @include adjust-font-size-to($s);
+}
+
+h5 {
+  @include adjust-font-size-to($xs);
+}
+
+h6 {
+  @include adjust-font-size-to($xxs);
+}

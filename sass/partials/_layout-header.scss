@@ -1,0 +1,51 @@
+[role="navigation"] {
+  position: relative;
+  @include padding-leader(0.5);
+  @include padding-trailer(0.5);
+  @include breakpoint($bp-m) {
+    @include padding-leader;
+    padding-bottom: 0;
+  }
+}
+
+
+// Logo
+.logo {
+  display: block;
+  @include trailer(0.5);
+  @include breakpoint($bp-m) {
+    float: left;
+  }
+}
+
+// Search
+.search {
+  @include breakpoint($bp-m) {
+    float: right;
+    width: 30%;
+  }
+}
+
+
+
+nav {
+  display: none;
+  @include breakpoint($bp-m) {
+    display: block;
+    ul {
+      @include container;
+      margin-left: auto;
+      margin-right: auto;
+      padding: $xs 0;
+      li {
+        @include horizontal-list-item;
+      }
+    }
+
+
+  }
+}
+
+// nav li {
+//   @include padding-sides($xs);
+// }

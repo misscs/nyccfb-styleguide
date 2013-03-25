@@ -1,0 +1,101 @@
+////////////
+// Colors //
+////////////
+$teal: #0c8993;
+$burdundy: #8e0e2d;
+$gold: #705e10;
+$brown: #211810;
+
+$black: #373638;
+$white: rgb(255, 255, 255);
+
+$primary: $teal;
+$secondary: $burdundy;
+$tertiary: $gold;
+$quadrary: $brown;
+
+// Assests
+
+$logo: "logo.png";
+
+// Backgrounds
+
+$quadrary-dotted-pattern: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NUEBd4xsjIIPn/P8NzEM2oKCHwH8YB0wRVAADSihbvBUJ11gAAAABJRU5ErkJggg==";
+
+///////////////
+//Typography //
+///////////////
+@mixin font-weight($fw) {
+  @if $fw == thin {
+    font-weight: 300;
+  }
+  @else if $fw == dark {
+    font-weight: 500;
+  }
+  @else if $fw == bold {
+    font-weight: 600;
+  }
+}
+
+.headline {
+  color: $secondary;
+  @include font-weight(dark);
+  @include adjust-font-size-to($l);
+}
+
+.features {
+  // border: 1px solid rgba($gold, 0.5)
+}
+
+// Layout
+[role="banner"] {
+  @include box-shadow(0 8px 15px -6px #efefef);
+  @include background-image(linear-gradient(rgba($primary, 0.4), rgba($primary, 0.05)));
+  border-top: 1px solid rgba(change_color($teal, $lightness: 45%), 0.5);
+}
+
+// Header
+[role="navigation"] {
+  background: url($quadrary-dotted-pattern) repeat;
+  border: 1px solid $quadrary;
+}
+
+#content {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVQYV2NkIALkxfMbMxJSB1I0aeHHs3gVwhSBDMOpEFkRToXoirAqxKYIQyEuRSgK8SmCKySkCKyQGEUghQBl3yUawyd9WQAAAABJRU5ErkJggg==)repeat;
+}
+
+[role="main"] {
+  background: rgba($white, 0.98);
+}
+
+[role="secondary"] {
+  background: rgba(change_color($tertiary, $lightness: 90%), 0.3);
+}
+
+[role="contentinfo"] {
+  background: url($quadrary-dotted-pattern) repeat;
+  border-top: 1px solid $quadrary;
+  color: $white;
+  .block-title {
+    @include text-shadow;
+  }
+}
+
+.logo {
+  font-size: $s;
+  color: rgba($white, 0.7);
+  @include replace-text-with-dimensions($logo);
+}
+
+////////////////
+// Navigation //
+///////////////
+
+nav {
+  @include background-image(linear-gradient(change_color($teal, $lightness: 42%), $teal));
+  @include box-shadow(0 1px 0 rgba(255,255,255,0.3) inset,0 0 1px rgba(255,255,255,0.4) inset,0 1px 3px rgba(0,0,0,0.2));
+  border: 1px solid $teal;
+  a {
+    @include link-colors($white);
+  }
+}
